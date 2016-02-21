@@ -48,7 +48,7 @@
   (catch 'end-flag
     (while t
       (setq action
-            (read-key-sequence-vector (format "change font size[%d] (+,-,0) "
+            (read-key-sequence-vector (format "Change font size[%d] (+,-,0) "
                                               font-size--current-size)))
       (setq c (aref action 0))
       (cond ((= c ?+)
