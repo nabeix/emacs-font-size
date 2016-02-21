@@ -1,9 +1,21 @@
 # emacs-font-size
 Change frame font size dynamically
 
+## Overview
+
+`font-size.el` provides the function `font-size-change` to change frame font size.
+
+The difference between the built-in `text-scale-adjust` and the `font-size-change` is a scope of applying.
+
+The `text-scale-adjust` changes the font size of the text of a particular buffer, and doesn't target the mode line and minibuffer.
+
+But, `font-size-change` targets all text of a frame.
+
+![font-size-change](images/font-size-change.gif)
+
 ## Installation
 
-TODO:
+Get `font-size.el` and install it to load-path directory.
 
 ## Usage
 
