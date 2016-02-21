@@ -4,7 +4,7 @@
 
 ;; Author: nabeix (Yusuke Watanabe) <yusukew052@gmail.com>
 ;; URL: https://github.com/nabeix/emacs-font-size
-;; Version: 0.0.1
+;; Version: 0.0.2
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -42,9 +42,30 @@
   (custom-set-variables '(font-size--current-size size))
   (set-face-attribute 'default nil :height (* size 10)))
 
+(defun font-size-decrease ()
+  "Decrease font size."
+  (interactive)
+  (font-size--adjust-current (- font-size--current-size 1))
+  (message "%dpt" font-size--current-size)
+  )
+
+(defun font-size-increase ()
+  "Increase font size."
+  (interactive)
+  (font-size--adjust-current (+ font-size--current-size 1))
+  (message "%dpt" font-size--current-size)
+  )
+
+(defun font-size-default ()
+  "Adjust default font size."
+  (interactive)
+  (font-size--adjust-current font-size--default-size)
+  (message "%dpt" font-size--current-size)
+  )
+
 (defun font-size-change ()
   "Change font size interactive."
-    (interactive)
+  (interactive)
   (catch 'end-flag
     (while t
       (setq action

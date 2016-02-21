@@ -3,13 +3,13 @@ Change frame font size dynamically
 
 ## Overview
 
-`font-size.el` provides the function `font-size-change` to change frame font size.
+`font-size.el` provides the features to change frame font size.
 
-The difference between the built-in `text-scale-adjust` and the `font-size-change` is a scope of applying.
+The difference between the built-in `text-scale-adjust` and `font-size.el` is a scope of applying.
 
 The `text-scale-adjust` changes the font size of the text of a particular buffer, and doesn't target the mode line and minibuffer.
 
-But, `font-size-change` targets all text of a frame.
+But, `font-size.el` targets all text of a frame.
 
 ![font-size-change](images/font-size-change.gif)
 
@@ -24,8 +24,23 @@ Get `font-size.el` and install it to load-path directory.
 (font-size-init 16)
 ```
 
+`font-size.el` provides:
+
+* font-size-change
+  * changes the font size interactive
+* font-size-decrease
+  * decreseas the font size
+* font-size-increase
+  * increases the font size
+* font-size-default
+  * change the font size to default
+
+The following is an example key-binding definition like Mac OS Applications.
+
 ```
-M-x font-size-change
+(define-key global-map (kbd "M-+") 'font-size-increase)
+(define-key global-map (kbd "M--") 'font-size-decrease)
+(define-key global-map (kbd "M-0") 'font-size-default)
 ```
 
 ## Contribution
