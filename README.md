@@ -27,7 +27,7 @@ Get `font-size.el` and install it to load-path directory.
 `font-size.el` provides:
 
 * font-size-change
-  * changes the font size interactive
+  * changes the font size interactive like `text-scale-adjust`
 * font-size-decrease
   * decreseas the font size
 * font-size-increase
